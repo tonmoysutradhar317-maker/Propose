@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle,#ff4d6d,#c9184a);
+    overflow:hidden;
+    font-family:'Dancing Script', cursive;
+    color:white;
+    text-align:center;
+}
+
+/* Romantic animation */
+.message{
+    animation:zoomIn 2s ease forwards;
+    opacity:0;
+}
+
+h1{
+    font-size:60px;
+}
+
+p{
+    font-size:32px;
+    margin-top:20px;
+}
+
+.heart{
+    font-size:80px;
+    animation:beat 1s infinite;
+}
+
+@keyframes zoomIn{
+    from{ transform:scale(0.5); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+}
+
+@keyframes beat{
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.2); }
+    100%{ transform:scale(1); }
+}
+</style>
+</head>
+<body>
+
+<div class="message">
+    <div class="heart">💖</div>
+    <h1>You Said YES!</h1>
+    <p>You Just Made My World Magical ✨</p>
+    
+</div>
+
+</body>
+</html>
