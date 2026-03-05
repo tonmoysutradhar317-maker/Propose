@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine?</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    font-family:'Poppins', sans-serif;
+    overflow:hidden;
+}
+
+/* Card */
+.container{
+    width:92%;
+    max-width:420px;
+    background:white;
+    padding:40px 25px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+h1{
+    font-family:'Dancing Script', cursive;
+    font-size:32px;
+    color:#ff4d6d;
+    margin-bottom:40px;
+}
+
+/* Side by side layout */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+/* Common button */
+button{
+    padding:12px 28px;
+    font-size:16px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    transition:0.25s ease;
+    min-width:110px;
+}
+
+/* YES */
+.yes{
+    background:#ff4d6d;
+    color:white;
+}
+
+.yes:hover{
+    transform:scale(1.1);
+    background:#e60039;
+}
+
+/* NO */
+.no{
+    background:#333;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Will You Be My Valentine? 💖</h1>
+
+    <div class="buttons">
+        <button class="yes" onclick="goLove()">Yes 💘</button>
+        <button class="no" id="noBtn">No 😅</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+function moveButton() {
+
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+
+    const maxX = window.innerWidth - btnWidth;
+    const maxY = window.innerHeight - btnHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    // Remove from flex layout
+    noBtn.style.position = "fixed";
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+}
+
+/* Desktop */
+noBtn.addEventListener("mouseenter", moveButton);
+
+/* Mobile */
+noBtn.addEventListener("touchstart", function(e){
+    e.preventDefault();
+    moveButton();
+});
+
+function goLove(){
+    window.location.href="love.html";
+}
+</script>
+
+</body>
+</html>
